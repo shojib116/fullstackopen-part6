@@ -16,8 +16,8 @@ const AnecdoteList = () => {
   const dispatch = useDispatch();
 
   const vote = (id) => {
-    dispatch(updateVotes(id));
     const anecdote = anecdotes.find((anecdote) => anecdote.id === id);
+    dispatch(updateVotes(anecdote));
     notificationHandler(`you voted '${anecdote.content}'`);
   };
 
