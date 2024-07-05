@@ -20,6 +20,9 @@ const AnecdoteForm = () => {
         `new anecdote '${newAnecdote.content}' added`
       );
     },
+    onError: (error) => {
+      notificationHandler(notificationDispatch, error.response.data.error);
+    },
   });
   const onCreate = (event) => {
     event.preventDefault();
